@@ -25,16 +25,20 @@ namespace Presentation.API.V1.Controllers
             };
 
             var pendingEgresses = request.Egresos;
-            var pendingEntrys = request.Ingresos;
+            var pendingEntries = request.Ingresos;
 
             foreach (var criterio in request.Criterio)
             {
                 var generator = LinkAlgorithmSelectorService.GetLinkingGenerator(criterio);
-                var links = generator.LinkingTransactions(request);
+                var linkProcessed = generator.LinkingTransactions(pendingEntries, pendingEgresses);
+
                 if (MappingHelper.IsEgressOrder[criterio])
-                    response.VinculosEgreso.AddRange(links);
+                    response.VinculosEgreso.AddRange(linkProcessed?.Links);
                 else
-                    response.VinculosIngreso.AddRange(links);
+                    response.VinculosIngreso.AddRange(linkProcessed?.Links);
+
+                pendingEgresses = linkProcessed?.PendingEgresses;
+                pendingEntries = linkProcessed?.PendingEntries;
             }
             
             return response;

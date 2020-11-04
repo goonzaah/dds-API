@@ -4,7 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>registry.hub.docker.com_utnddsgesoc</NameOfLastUsedPublishProfile>
+    <ActiveDebugProfile>LinkExpenses</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

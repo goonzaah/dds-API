@@ -9,7 +9,9 @@ namespace LinkExpenses.Get.LinkGenerate
     public static class Algorithms
     {
         //agrupa por egreso
-        public static List<Link> PrimeroIngreso(List<Entry> Ingresos, List<Egress> Egresos) {
+        public static LinkedProcessed PrimeroIngreso(List<Entry> Ingresos, List<Egress> Egresos) {
+
+            var pendingEgresses = new List<Egress>();
 
             var links = new List<Link>();
 
@@ -35,20 +37,31 @@ namespace LinkExpenses.Get.LinkGenerate
                     {
                         pendingEntries.Remove(entry);
                         entriesLinked.Add(entry);
+                        
                         break;
                     }
                 }
                 if (entriesLinked.Count > 0)
                     links.Add(new Link() { IdAsociador = egress.Id, IdAsociados = entriesLinked.Select(x => x.Id).ToArray() });
+                else
+                    pendingEgresses.Add(egress);
+
+
                 if (pendingEntries.Count == 0)
                     break;
             }
 
-            return links;
+            return new LinkedProcessed()
+            {
+                Links = links,
+                PendingEntries = pendingEntries,
+                PendingEgresses = pendingEgresses
+            };
         }
         //agrupa por ingreso
-        public static List<Link> PrimeroEgreso(List<Entry> Ingresos, List<Egress> Egresos)
+        public static LinkedProcessed PrimeroEgreso(List<Entry> Ingresos, List<Egress> Egresos)
         {
+            var pendingEntries = new List<Entry>();
 
             var links = new List<Link>();
 
@@ -79,11 +92,20 @@ namespace LinkExpenses.Get.LinkGenerate
 
                 if (egressesLinkedIds.Count > 0)
                     links.Add(new Link() { IdAsociador = entry.Id, IdAsociados = egressesLinkedIds.ToArray() });
+                else
+                    pendingEntries.Add(entry);
+
+
                 if (pendingEgresses.Count == 0)
                     break;
             }
 
-            return links;
+            return new LinkedProcessed()
+            {
+                Links = links,
+                PendingEntries = pendingEntries,
+                PendingEgresses = pendingEgresses
+            };
         }
 
 

@@ -8,9 +8,9 @@ namespace LinkExpenses.Get.LinkGenerate.Generators
 {
     public class OrdenValorPrimeroIngresoGenerator : ILinkGenerateStrategy
     {
-        public List<Link> LinkingTransactions(TransactionsModel request)
+        public LinkedProcessed LinkingTransactions(List<Entry> Ingresos, List<Egress> Egresos)
         {
-            var linked = Algorithms.PrimeroIngreso(request.Ingresos.OrderBy(x => x.Monto).ToList(), request.Egresos.OrderBy(x => x.Monto).ToList());
+            var linked = Algorithms.PrimeroIngreso(Ingresos.OrderBy(x => x.Monto).ToList(), Egresos.OrderBy(x => x.Monto).ToList());
             return linked;
         }
     }

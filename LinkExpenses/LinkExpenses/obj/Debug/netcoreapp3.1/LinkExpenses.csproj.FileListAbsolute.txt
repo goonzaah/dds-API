@@ -1,5 +1,7 @@
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.AssemblyInfoInputs.cache
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.AssemblyInfo.cs
+C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.csproj.CoreCompileInputs.cache
+C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -16,5 +18,3 @@ C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\st
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.dll
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.pdb
 C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.genruntimeconfig.cache
-C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.csproj.CoreCompileInputs.cache
-C:\Users\Gonza\source\repos\LinkExpenses\LinkExpenses\obj\Debug\netcoreapp3.1\LinkExpenses.MvcApplicationPartsAssemblyInfo.cache
