@@ -20,9 +20,7 @@ namespace LinkExpenses
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder
-                    .UseSetting("http_port","5000")
-                    .UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
