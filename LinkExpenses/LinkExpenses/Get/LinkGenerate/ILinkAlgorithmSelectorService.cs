@@ -1,4 +1,5 @@
-﻿using LinkExpenses.Get.LinkGenerate;
+﻿using Core.Shared.Helpers;
+using LinkExpenses.Get.LinkGenerate;
 using LinkExpenses.Get.Models;
 using System;
 using System.Collections.Generic;

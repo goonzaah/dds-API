@@ -7,7 +7,9 @@ namespace LinkExpenses.Get.Models
 {
     public class LinkedTransactions
     {
-        public List<Link> Vinculos { get; set; }
-        public string Asociador { get; set; }
+        public List<Link> VinculosEgreso { get; set; }
+
+        public List<Link> VinculosIngreso { get; set; }
+        
     }
 }

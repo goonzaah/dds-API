@@ -8,6 +8,6 @@ namespace LinkExpenses.Get.Models
     public class Link
     {
         public int IdAsociador { get; set; }
-        public List<int> IdAsociados { get; set; }
+        public int[] IdAsociados { get; set; }
     }
 }

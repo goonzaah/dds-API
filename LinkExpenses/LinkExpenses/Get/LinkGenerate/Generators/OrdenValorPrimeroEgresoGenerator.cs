@@ -11,7 +11,9 @@ namespace LinkExpenses.Get.LinkGenerate.Generators
         public List<Link> LinkingTransactions(TransactionsModel request)
         {
             // Faltan las validaciones
-            return Algorithms.PrimeroEgreso(request.Ingresos.OrderBy(x => x.Monto).ToList(), request.Egresos.OrderBy(x => x.Monto).ToList());
+            var linked = Algorithms.PrimeroEgreso(request.Ingresos.OrderBy(x => x.Monto).ToList(), request.Egresos.OrderBy(x => x.Monto).ToList());
+            
+            return linked;
         }
     }
 }

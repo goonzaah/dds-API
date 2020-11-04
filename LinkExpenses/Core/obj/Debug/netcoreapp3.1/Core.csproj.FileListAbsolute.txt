@@ -1,5 +1,0 @@
-C:\Users\Gonza\source\repos\LinkExpenses\Core\bin\Debug\netcoreapp3.1\Core.deps.json
-C:\Users\Gonza\source\repos\LinkExpenses\Core\bin\Debug\netcoreapp3.1\Core.dll
-C:\Users\Gonza\source\repos\LinkExpenses\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
-C:\Users\Gonza\source\repos\LinkExpenses\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
-C:\Users\Gonza\source\repos\LinkExpenses\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs

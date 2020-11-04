@@ -10,7 +10,8 @@ namespace LinkExpenses.Get.LinkGenerate.Generators
     {
         public List<Link> LinkingTransactions(TransactionsModel request)
         {
-            return Algorithms.PrimeroIngreso(request.Ingresos.OrderBy(x => x.Monto).ToList(), request.Egresos.OrderBy(x => x.Monto).ToList());
+            var linked = Algorithms.PrimeroIngreso(request.Ingresos.OrderBy(x => x.Monto).ToList(), request.Egresos.OrderBy(x => x.Monto).ToList());
+            return linked;
         }
     }
 }

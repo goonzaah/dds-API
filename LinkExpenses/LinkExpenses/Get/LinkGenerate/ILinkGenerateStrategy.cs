@@ -8,6 +8,6 @@ namespace LinkExpenses.Get.LinkGenerate
 {
     public interface ILinkGenerateStrategy
     {
-        List<Link> LinkingTransactions(TransactionsModel request);
+        List<Link> LinkingTransactions(TransactionsModel transactions);
     }
 }

@@ -8,7 +8,8 @@ namespace LinkExpenses.Get.LinkGenerate
 {
     public static class Algorithms
     {
-        public static List<Link> PrimeroEgreso(List<Entry> Ingresos, List<Egress> Egresos) {
+        //agrupa por egreso
+        public static List<Link> PrimeroIngreso(List<Entry> Ingresos, List<Egress> Egresos) {
 
             var links = new List<Link>();
 
@@ -20,7 +21,7 @@ namespace LinkExpenses.Get.LinkGenerate
 
                 decimal summary = 0;
 
-                var entries = pendingEntries;
+                var entries = pendingEntries.ToList();
 
                 foreach (Entry entry in entries)
                 {
@@ -38,49 +39,47 @@ namespace LinkExpenses.Get.LinkGenerate
                     }
                 }
                 if (entriesLinked.Count > 0)
-                    links.Add(new Link() { IdAsociador = egress.Id, IdAsociados = entriesLinked.Select(x => x.Id).ToList() });
+                    links.Add(new Link() { IdAsociador = egress.Id, IdAsociados = entriesLinked.Select(x => x.Id).ToArray() });
                 if (pendingEntries.Count == 0)
                     break;
             }
 
             return links;
         }
-
-        public static List<Link> PrimeroIngreso(List<Entry> Ingresos, List<Egress> Egresos)
+        //agrupa por ingreso
+        public static List<Link> PrimeroEgreso(List<Entry> Ingresos, List<Egress> Egresos)
         {
 
             var links = new List<Link>();
 
-            var pendingEntries = Ingresos;
+            var pendingEgresses = Egresos;
 
-            foreach (var egress in Egresos)
+            foreach (var entry in Ingresos)
             {
-                List<int> entriesLinkedIds = new List<int>();
+                List<int> egressesLinkedIds = new List<int>();
 
                 decimal summary = 0;
 
-                var entries = pendingEntries;
-
-                foreach (Entry entry in entries)
+                foreach (Egress egress in pendingEgresses.ToList())
                 {
-                    if (entry.Monto < egress.Monto && RangeAccepted(egress.FechaOperacion, entry.RangoAceptabilidad))
+                    if (entry.Monto > egress.Monto && RangeAccepted(egress.FechaOperacion, entry.RangoAceptabilidad))
                     {
-                        summary += entry.Monto;
-                        pendingEntries.Remove(entry);
-                        entriesLinkedIds.Add(entry.Id);
+                        summary += egress.Monto;
+                        pendingEgresses.Remove(egress);
+                        egressesLinkedIds.Add(egress.Id);
                     }
 
                     else if (entry.Monto == egress.Monto && RangeAccepted(egress.FechaOperacion, entry.RangoAceptabilidad))
                     {
-                        pendingEntries.Remove(entry);
-                        entriesLinkedIds.Add(entry.Id);
+                        pendingEgresses.Remove(egress);
+                        egressesLinkedIds.Add(egress.Id);
                         break;
                     }
                 }
 
-                if (entriesLinkedIds.Count > 0)
-                    links.Add(new Link() { IdAsociador = egress.Id, IdAsociados = entriesLinkedIds });
-                if (pendingEntries.Count == 0)
+                if (egressesLinkedIds.Count > 0)
+                    links.Add(new Link() { IdAsociador = entry.Id, IdAsociados = egressesLinkedIds.ToArray() });
+                if (pendingEgresses.Count == 0)
                     break;
             }
 

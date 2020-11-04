@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "i+v+Afjz6t5o++jUScKpxvAjOGFIJxYpKYbfjv8dqaZhSrJspb7mtgmDEA0tSKVR3/lGTxkwgHmHpwQh6N67tA==",
+  "dgSpecHash": "Kqxb1LQnq0okFd49TIMoSVeHImd3K+DuY6L8RNjp0KrnWe5YolQdHflIj2H+eS3ucoW3Lv34OcJ01A5qovyCig==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gonza\\source\\repos\\LinkExpenses\\LinkExpenses\\LinkExpenses.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Gonza\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
   "logs": []
 }
